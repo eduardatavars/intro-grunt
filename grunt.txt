@@ -1,0 +1,36 @@
+Windows PowerShell 
+
+cd c:/pastadoarquivo
+
+npm i -g grunt-cli
+
+npm init
+
+npm i --save-dev grunt
+
+
+VSCODE
+
+package-json > "grunt": "grunt",
+ 
+Gruntfile.js 
+
+module.exports = function(grunt) {
+    grunt.initConfig({
+        pkg: grunt.file.readJSON('package.json'),
+    })
+}
+
+grunt.registerTask('olaGrunt', function() {
+        const done = this.async();
+        setTimeout(function() {
+            console.log('Olá Grunt');
+            done();
+        }, 3000);
+    })
+
+    grunt.registerTask('default', ['olaGrunt']);
+}
+
+npm run grunt //sem a const teria que executar com 'npm run grunt olaGrunt'
+
