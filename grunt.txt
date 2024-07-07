@@ -100,3 +100,17 @@ COMPRIMIR ARQUIVO CSS
         }
 
 npm run grunt
+
+
+PLUGIN CONCURRENT (rodar tarefas paralelas)
+
+npm install --save-dev grunt-concurrent
+
+grunt.loadNpmTasks('grunt-concurrent');
+
+,
+        concurrent: {
+            target: ['olaGrunt', 'less', 'sass']
+        }
+
+grunt.registerTask('default', ['concurrent']);
