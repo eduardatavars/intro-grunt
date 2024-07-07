@@ -34,3 +34,69 @@ grunt.registerTask('olaGrunt', function() {
 
 npm run grunt //sem a const teria que executar com 'npm run grunt olaGrunt'
 
+
+PLUGIN LESS
+
+npm install --save-dev grunt-contrib-less
+
+grunt.loadNpmTasks('grunt-contrib-less');
+
+less: {
+            development: {
+                files: {
+                    'main.css': 'main.less'
+                }
+            }
+        }
+
+grunt.registerTask('default', ['less']);
+
+npm run grunt
+
+,
+            production: {
+                options: {
+                    compress: true,
+                },
+                files: {
+                    'main.min.css':'main.less'
+                }
+            }
+
+npm run grunt
+
+
+PLUGIN SASS
+
+npm install --save-dev grunt-contrib-sass
+
+grunt.loadNpmTasks('grunt-contrib-sass');
+
+,
+        sass: {
+            dist: {
+                files: {
+                    'main2.css': 'main.scss'
+                }
+            }
+        }
+
+grunt.registerTask('default', ['less', 'sass']);
+
+npm run grunt
+
+COMPRIMIR ARQUIVO CSS
+
+,
+        sass: {
+            dist: {
+                options: {
+                    style: 'compressed'
+                },
+                files: {
+                    'main2.css': 'main.scss'
+                }
+            }
+        }
+
+npm run grunt
